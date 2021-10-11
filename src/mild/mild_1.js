@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum=a+b;
-    return sum+"";
+    return ""+a+" + " +b+" = "sum+"";
 
 }
 
@@ -52,7 +52,7 @@ export function maxAndMin(numbers) {
             min=numbers[i];
         }
     }
-    return "max: " + min + ", min: " + max;                
+    return "max: " + max + ", min: " + min;                
 }
 
 /**
