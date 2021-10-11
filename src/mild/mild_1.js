@@ -52,7 +52,7 @@ export function maxAndMin(numbers) {
             min=numbers[i];
         }
     }
-    return "max: " + max + ", min: " + min;                
+    return "{ max: " + max + ", min: " + min +" }";                
 }
 
 /**
@@ -77,4 +77,5 @@ export function countArray(array) {
             ret[array[i]]=1;
         }
     }
+    return ret;
 }
