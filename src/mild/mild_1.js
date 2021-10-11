@@ -9,7 +9,8 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-    return a+b+"";
+    let sum=a+b;
+    return sum+"";
 
 }
 
@@ -51,7 +52,7 @@ export function maxAndMin(numbers) {
             min=numbers[i];
         }
     }
-    return "min: " + min + ", max: " + max;                
+    return "max: " + min + ", min: " + max;                
 }
 
 /**
@@ -65,5 +66,5 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    
+
 }
