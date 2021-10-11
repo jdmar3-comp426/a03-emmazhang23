@@ -9,8 +9,8 @@ export function identifyVariable(variable) {
    let type= typeof variable;
    let value=variable;
 
-   return "{ type: '"+type+"', value: "+value+" }";
-
+   //return "{ type: '"+type+"', value: "+value+" }";
+   return type;
 }
 
 
@@ -77,7 +77,7 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   
+
 
 }
 
