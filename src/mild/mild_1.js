@@ -70,7 +70,7 @@ export function countArray(array) {
     //check is there a key for this, if there is, add one to its definition
     //if not, make a key
     let ret=new Object();
-    for(let i=0; i<= array.length; i++){
+    for(let i=0; i< array.length; i++){
         if(array[i] in ret){
             ret[array[i]]+=1;
         } else{
