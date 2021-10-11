@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum=a+b;
-    return ""+a+" + " +b+" = "sum+"";
+    return ""+a+" + " +b+" = "+ sum+"";
 
 }
 
@@ -66,5 +66,15 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    //go through every one
+    //check is there a key for this, if there is, add one to its definition
+    //if not, make a key
+    let ret=new Object();
+    for(let i=0; i<= array.length; i++){
+        if(array[i] in ret){
+            ret[array[i]]+=1;
+        } else{
+            ret[array[i]]=1;
+        }
+    }
 }
