@@ -29,6 +29,7 @@ export function identifyVariable(variable) {
  */
 export function identifyArray(array) {
    let ar=[];
+   let st ="";
    for(let i=0; i< array.length; i++){
       let type= typeof array[i];
       let value=array[i];
