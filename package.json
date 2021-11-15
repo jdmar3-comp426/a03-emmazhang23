@@ -12,6 +12,6 @@
     "medium_3": "node src/medium/medium_3.js",
     "spicy_9": "node src/spicy/spicy_9.js"
   },
-  "author": "",
+  "author": "Emma Zhang",
   "license": "GPL-3.0-or-later"
 }
