@@ -31,12 +31,9 @@ export function identifyArray(array) {
    let ar=[];
    let st ="";
    for(let i=0; i< array.length; i++){
-      let type= typeof array[i];
-      let value=array[i];
-   
-      ar[i]= "{ type: '"+type+"', value: "+value+" },%0A";
+      ar[i]=identifyVariable(array[i])
    }
-   return ar[8];
+   return ar;
 
 }
 
