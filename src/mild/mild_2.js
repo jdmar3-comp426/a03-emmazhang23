@@ -9,7 +9,7 @@ export function identifyVariable(variable) {
    let type= typeof variable;
    let value=variable;
 
-   return ("{ type: '"+type+"', value: "+value+" }");
+   return ("{ type: '"+type+"', value: '"+value+"' }");
 
 }
 
