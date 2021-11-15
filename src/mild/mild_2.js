@@ -34,8 +34,9 @@ export function identifyArray(array) {
       let type= typeof array[i];
       let value=array[i];
    
-      ar[i]= "{ type: '"+type+"', value: '"+value+"' }";
+      st+= "{ type: '"+type+"', value: "+value+" }";
    }
+   ar[0]=st
    return ar;
 
 }
