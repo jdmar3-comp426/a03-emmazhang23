@@ -37,7 +37,7 @@ export function identifyArray(array) {
       st+= "{ type: '"+type+"', value: "+value+" }";
    }
    ar[0]=st
-   return ar;
+   return array;
 
 }
 
