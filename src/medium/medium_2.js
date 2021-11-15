@@ -38,8 +38,8 @@ export const allCarStats = {
         },
         [])),
     ratioHybrids: mpg_data.reduce(function (Hybrids, car) {
-        const hybrid=0
-        const non=0
+        let hybrid=0
+        let non=0
         if (car.hybrid == true) {
           hybrid++
         }
