@@ -38,15 +38,13 @@ export const allCarStats = {
         },
         [])),
     ratioHybrids: mpg_data.reduce(function (Hybrids, car) {
-        Hybrid[0]=0
-        Hybrid[1]=1
-        if (car.hybrid ==true) {
-          Hybrids[0]++
+        if ((car.hybrid +"") in Hybrids) {
+          Hybrids[car.hybrid+""]++
         }
         else {
-          Hybrids[1]++
+          Hybrids[car.hybrid+""] = 1
         }
-        return Hybrids[0]/Hybrids[1]
+        return Hybrids["true"]/Hybrids["false"]
       }, {}),
 };
 
