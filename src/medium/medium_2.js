@@ -37,7 +37,7 @@ export const allCarStats = {
           return previousValue.concat(currentValue.year)
         },
         [])),
-    ratioHybrids: mpg_data.filter(x=> x.hybrid === true)/mpg_data.filter(x=> x.hybrid === false),
+    ratioHybrids: mpg_data.filter(x=> x.hybrid === true).length/mpg_data.filter(x=> x.hybrid === false).length,
 };
 
 
