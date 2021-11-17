@@ -100,7 +100,7 @@ export const allCarStats = {
  */
 export const moreStats = {
     makerHybrids: mpg_data.reduce(function (acc, obj) {
-        let key = obj[make]
+        let key = obj.make
         if (!acc[key]) {
           acc[key] = []
         }
