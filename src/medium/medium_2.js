@@ -106,6 +106,6 @@ export const moreStats = {
         }
         acc[key].push(obj)
         return acc
-      }, {}).filter(x=> x.hybrid === true),
+      }, {}),
     avgMpgByYearAndHybrid: undefined
 };
