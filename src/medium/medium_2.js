@@ -99,6 +99,13 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
+    makerHybrids: mpg_data.reduce(function (acc, obj) {
+        let key = obj[make]
+        if (!acc[key]) {
+          acc[key] = []
+        }
+        acc[key].push(obj)
+        return acc.filter(x=> x.hybrid === true)
+      }, {}),
     avgMpgByYearAndHybrid: undefined
 };
