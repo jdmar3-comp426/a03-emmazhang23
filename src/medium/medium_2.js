@@ -98,14 +98,19 @@ export const allCarStats = {
  *
  * }
  */
+
+ function groupBy(objectArray, property) {
+    return objectArray.reduce(function (acc, obj) {
+      let key = obj[property]
+      if (!acc[key]) {
+        acc[key] = []
+      }
+      acc[key].push(obj)
+      return acc
+    }, {})
+  }
+
 export const moreStats = {
-    makerHybrids: mpg_data.reduce(function (acc, obj) {
-        let key = obj.make
-        if (!acc[key]) {
-          acc[key] = []
-        }
-        acc[key].push(obj)
-        return acc
-      }, {}),
+    makerHybrids: groupBy(mpg_data, 'make'),
     avgMpgByYearAndHybrid: undefined
 };
