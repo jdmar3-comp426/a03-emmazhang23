@@ -108,9 +108,9 @@ export const moreStats = {
         if (!acc[key]) {
           acc[key] = []
         }
-        acc[key].push(obj['id'])
+        acc[key].push(obj)
       }
-      return acc        
-    }, {})
+      return acc.concat(currentValue.id)        
+    }, [])
     //avgMpgByYearAndHybrid: undefined
 };
