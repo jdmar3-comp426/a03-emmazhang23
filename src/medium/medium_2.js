@@ -109,7 +109,6 @@ export const moreStats = {
           acc[key] = []
         }
         acc[key].push(obj['id'])
-        return acc        
       }
       return acc        
     }, {}),
