@@ -111,6 +111,7 @@ export const moreStats = {
         acc[key].push(obj['id'])
         return acc        
       }
+      return acc        
     }, {}),
     avgMpgByYearAndHybrid: undefined
 };
