@@ -101,7 +101,7 @@ export const allCarStats = {
 
 
  export const moreStats = {
-  makerHybrids: [mpg_data.reduce((acc, d) => {
+  makerHybrids: mpg_data.reduce((acc, d) => {
     if(d.hybrid==true){
       const found = acc.find(a => a.make === d.make);
       const value=d.id
@@ -113,8 +113,15 @@ export const allCarStats = {
       }
     }
     return acc;
-    }, [])],
-    avgMpgByYearAndHybrid: {"make": "Buick"}
+    }, []),
+    avgMpgByYearAndHybrid: mpg_data.reduce(function (acc, obj) {
+      let key = obj.year
+      if (!acc[key]) {
+        acc[key] = []
+      }
+      acc[key].push(obj)
+      return acc
+    }, {})
   }
 
   // export const moreStats = {
