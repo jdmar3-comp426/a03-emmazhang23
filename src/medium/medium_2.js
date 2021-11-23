@@ -109,7 +109,7 @@ export const allCarStats = {
         acc.push({make: d.make, hybrids: [d.id]})
       }
       else{
-        found.data.hybrids.push(value)
+        found.hybrids.push(value)
       }
     }
     return acc;
