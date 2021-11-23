@@ -98,19 +98,62 @@ export const allCarStats = {
  *
  * }
  */
+ const result = arr.reduce((acc, d) => {
+  const found = acc.find(a => a.name === d.name);
+  //const value = { name: d.name, val: d.value };
+  const value = { value: d.value, count: d.count }; // the element in data property
+  if (!found) {
+    //acc.push(...value);
+    acc.push({name:d.name, data: [value]}) // not found, so need to add data property
+  }
+  else {
+    //acc.push({ name: d.name, data: [{ value: d.value }, { count: d.count }] });
+    found.data.push(value) // if found, that means data property exists, so just push new element to found.data.
+  }
+  return acc;
+}, []);
 
-
-
-export const moreStats = {
-    makerHybrids: mpg_data.filter(n=>n.hybrid==true).reduce(function (acc, obj) {
-      let key = obj['make']
-
-      if (!acc[key]) {
-        acc[key] = []
+ export const moreStats = {
+  makerHybrids: mpg_data.reduce((acc, d) => {
+    if(d.hybrid==true){
+      const found = acc.find(a => a.make === d.make);
+      const value=d.id
+      if (!found) {
+        acc.push({make: d.make, hybrids: [d.id]})
       }
-      acc[key].push(obj)
-    
-      return acc        
+      else{
+        found.data.hybrids.push(value)
+      }
+    }
+    return acc;
     }, []),
     avgMpgByYearAndHybrid: undefined
-};
+  }
+
+  // export const moreStats = {
+  //   makerHybrids: mpg_data.reduce(function (acc, obj) {
+  //     let key = "make"
+  //     let second="hybrids"
+  //     if(obj['hybrid']==true){
+  //       if (!(acc[key]==obj['make'])) {
+  //         acc[key] = obj['make']
+  //         acc[seconds][obj['make']]
+  //       }
+  //       acc[key].push(obj)
+  //     }
+  //     return acc.concat(currentValue.id)        
+  //   }, [])
+
+// export const moreStats = {
+//     makerHybrids: mpg_data.reduce(function (acc, obj) {
+//       let key = obj['make']
+//       if(obj['hybrid']==true){
+//         if (!acc[key]) {
+//           acc[key] = []
+//         }
+//         acc[key].push(obj)
+//       }
+//       return acc.concat(currentValue.id)        
+//     }, {})
+//     //avgMpgByYearAndHybrid: undefined
+// };
