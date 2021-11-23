@@ -114,7 +114,7 @@ export const allCarStats = {
     }
     return acc;
     }, []),
-    avgMpgByYearAndHybrid: undefined
+    avgMpgByYearAndHybrid: {"make": "Buick"}
   }
 
   // export const moreStats = {
