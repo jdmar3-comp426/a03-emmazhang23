@@ -117,7 +117,7 @@ export const allCarStats = {
     avgMpgByYearAndHybrid: mpg_data.reduce(function (acc, obj) {
       let key = obj["year"]
       if (!acc[key]) {
-        acc[key] = {hybrid: {city: {}, highway: {}} , notHybrid:{}}
+        acc[key] = {hybrid: {city: [], highway: []} , notHybrid:{city: [], highway: []}}
       } 
       if(obj["hybrid"]==true){
         acc[key].hybrid.city.push(obj.city_mpg)    
