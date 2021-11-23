@@ -117,20 +117,16 @@ export const allCarStats = {
     avgMpgByYearAndHybrid: mpg_data.reduce(function (acc, obj) {
       let key = obj["year"]
       if (!acc[key]) {
-        if(obj["hybrid"]==true){
-          acc[key] = {hybrid: {city: obj["city_mpg"], highway: obj["highway_mpg"]} , notHybrid:{}}
-        }else{
-          acc[key] = {hybrid: {} , notHybrid:{city: obj["city_mpg"], highway:obj["highway_mpg"]}}  
-        }
-      } else{
-        if(obj["hybrid"]==true){
-          acc[key].hybrid.city.push(obj.city_mpg)    
-          acc[key].hybrid.highway.push(obj.highway_mpg)      
-        }else{
-          acc[key].notHybrid.city.push(obj.city_mpg)    
-          acc[key].notHybrid.highway.push(obj.highway_mpg)   
-        }
+        acc[key] = {hybrid: {city: {}, highway: {}} , notHybrid:{}}
+      } 
+      if(obj["hybrid"]==true){
+        acc[key].hybrid.city.push(obj.city_mpg)    
+        acc[key].hybrid.highway.push(obj.highway_mpg)      
+      }else{
+        acc[key].notHybrid.city.push(obj.city_mpg)    
+        acc[key].notHybrid.highway.push(obj.highway_mpg)   
       }
+      
 
       return acc
     }, {})
