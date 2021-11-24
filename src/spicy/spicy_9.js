@@ -15,7 +15,12 @@
  *                from calling the function
  */
 export const repeat = (fn, n, ...params) => {
-
+    let set=[]
+    for (let i = 0; i < n; i++) {
+        const newer=fn(params)
+        set[i]=newer
+    }
+    return set
 };
 
 

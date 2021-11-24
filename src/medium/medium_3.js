@@ -18,13 +18,13 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
-    return car_data.reduce(function (acc, obj, i) {
-        if((obj["torque"]>=minTorque) && (obj["horsepower"] >=minTorque)){
+    return car_data.reduce(function (acc, obj) {
+        if((obj.torque>=minTorque) && (obj.horsepower >=minHorsepower)){
             acc.push(obj)
         }
   
         return acc
-      }, [])//.sort((a, b) => (a.horsepower < b.horsepower) ? 1 : -1)
+      }, []).sort((a, b) => (a.horsepower < b.horsepower) ? 1 : -1)
 
 }
 
