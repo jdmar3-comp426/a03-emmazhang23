@@ -40,12 +40,12 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  */
 export function searchMpg(car_data, minCity, minHighway) {
     return car_data.reduce(function (acc, obj, i) {
-        if(obj["torque"]>=minTorque && obj["horsepower"] >=minTorque){
+        if(obj["highway_mpg"]>=minHighway && obj["city_mpg"] >=minCity){
             acc.push(obj)
         }
   
         return acc
-      }, []).sort((a, b) => (a.horsepower > b.horsepower) ? 1 : -1)
+      }, []).sort((a, b) => (a.highway_mpg > b.highway_mpg) ? 1 : -1)
 
 }
 
