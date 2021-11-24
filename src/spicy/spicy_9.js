@@ -17,7 +17,7 @@
 export const repeat = (fn, n, ...params) => {
     let set=[]
     for (let i = 0; i < n; i++) {
-        const newer=fn(params)
+        const newer=fn(...params)
         set.push(newer)
     }
     return set
@@ -29,7 +29,7 @@ export const repeat = (fn, n, ...params) => {
  *   10 times.
  */
 export const repeatDemo = () => {
-    repeat((console.log()), 10, ['Hello World'])   
+    repeat((console.log), 10, ['Hello World'])   
 
 };
 
