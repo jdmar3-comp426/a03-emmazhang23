@@ -24,7 +24,7 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
         }
   
         return acc
-      }, []).sort((a, b) => (a.horsepower > b.horsepower) ? 1 : -1)
+      }, []).sort((a, b) => (a.horsepower < b.horsepower) ? 1 : -1)
 
 }
 
@@ -45,7 +45,7 @@ export function searchMpg(car_data, minCity, minHighway) {
         }
   
         return acc
-      }, []).sort((a, b) => (a.highway_mpg > b.highway_mpg) ? 1 : -1)
+      }, []).sort((a, b) => (a.highway_mpg < b.highway_mpg) ? 1 : -1)
 
 }
 
